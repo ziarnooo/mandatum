@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+reports/*.json
+.env*
+.DS_Store
+
+!reports/summary.json

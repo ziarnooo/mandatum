@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Portraits For Patriots",
+    "text": "The Portraits for Patriots® mission is to empower those who have honorably-served our nation to feel confident in their personal brand as they transition to the American work force. Our program is powered by a remarkable team of volunteer “Portraiteers” across the nation and has provided thousands of portfolio-quality images to our transitioning military, spouses and Gold Star families coast to coast — free of charge.",
+    "url": "https://portraitsforpatriots.org/",
+    "image": "/assets/partner-portraits-for-patriots.webp"
+  },
+  {
+    "title": "Candorful",
+    "text": "Candorful provides job interview and networking prep and practice for Veterans, Transitioning Military, and Military Spouses. Candorful has over 130 volunteers who are executive level professionals from a wide variety of industries who give you the real job interview experience so that you are ready to Nail Your Interview. Candorful interview practice sessions not only ensure you will gain experience and confidence, but provide the opportunity to ask the coaches questions and to get direct and valuable feedback about your interview skills. 97% of survey respondents state that Candorful practice helped them successfully land the job. Details about the Candorful experience: Candorful conducts a 30 minute intake meeting to prepare you for your practice sessions before providing access to the 130 volunteer interview coaches. We encourage you to schedule AT LEAST 3 interview practice sessions with different coaches so that you can become accustomed to different interview styles and questions. However, the team encourages you to not limit yourself to 3 practice sessions. Go ahead, be bold and schedule 4 or 5! So get started by scheduling your one INTAKE meeting. Remember, if you sign up, be sure to show up! Candorful is a 501c3 nonprofit and provides this service for free.",
+    "url": "https://candorful.org/",
+    "image": "/assets/partner-candorful.webp"
+  },
+  {
+    "title": "Oplign",
+    "text": "Oplign serves the Veteran community as a job-market intelligence platform built specifically for those with military-connected experience. Veterans, National Guard and Reservists, Military Spouses, Student-Veterans, and dependents use Oplign to translate their skills, training, and lived experience into clear civilian career pathways. The platform provides real-time insight into where their skills are in demand, what roles they align to, and how employers evaluate qualifications—removing guesswork and bias from the job search. By turning military experience into actionable labor-market intelligence, Oplign empowers military-connected talent to make informed career decisions and connect to employers who understand and value their capabilities.",
+    "url": "https://oplign.com/companies.html",
+    "image": "/assets/partner-oplign.webp"
+  },
+  {
+    "title": "ZeroEyes",
+    "text": "ZeroEyes delivers a proactive, human-verified AI gun detection software solution that integrates into existing digital security cameras and helps to mitigate mass shootings and gun-related violence by reducing response times, providing actionable intelligence with images, and delivering clarity among chaos — ultimately saving lives. ZeroEyes' patented solution has been recognized by the U.S. Department of Homeland Security (DHS) as a promising anti-terrorism technology and was the first video analytics technology to receive full SAFETY Act DT&E Designation. Founded by Navy SEALs and elite technologists, ZeroEyes dispatches accurate and real-time actionable intelligence about the illegal brandishing of a gun near or in an occupied area or building, to local staff and law enforcement with an image of the shooter(s) and location of the threat, as fast as 3 to 5 seconds from the moment the gun is detected.",
+    "url": "https://zeroeyes.com/",
+    "image": "/assets/partner-zeroeyes.webp"
+  },
+  {
+    "title": "The STEPS Foundation",
+    "text": "The STEPS Foundation is dedicated specifically to the care of Special Operations Forces (SOF) spouses during the critical transition from service to civilian life. We empower women by fostering balance and personal growth through holistic, wellness-focused, cutting-edge programs intentionally curated around the four cornerstones of a successful transition: mental health, physical health, community, and career/education. As spouses re-establish peace from within and rediscover strength through softening, self-care, and support, they are empowered to thrive—not merely survive—as they and their families journey into civilian life.",
+    "url": "https://www.thesteps-foundation.org/",
+    "image": "/assets/partner-the-steps-foundation.webp"
+  },
+  {
+    "title": "J2 Ventures",
+    "text": "J2 Ventures is a venture capital firm dedicated to backing mission-driven founders who are building dual-use technologies that serve both American national security and the broader commercial economy. The firm is led by a team of veterans, scientists, and operators who focus on solutions that improve the health, resilience, and technological edge of service members, veterans, and the communities they return to after military service.",
+    "url": "https://www.j2vp.com/",
+    "image": "/assets/partner-j2-ventures.webp"
+  },
+  {
+    "title": "The Pillar Foundation",
+    "text": "The Pillar Foundation is a 501C3 nonprofit that supports the special operation forces spouses two years prior and post separation from the United States military. Our mission is to create a community of women who have been where you are. We provide career, educational, and mental health support to military spouses during this critical transition period.",
+    "url": "https://www.sofpillarfoundation.org/",
+    "image": "/assets/partner-the-pillar-foundation.webp"
+  }
+]

@@ -1,0 +1,268 @@
+[
+  {
+    "file": "about-us-desktop.json",
+    "url": "http://127.0.0.1:4321/about-us",
+    "date": "2026-11-12T20:49:27.845Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 163.3415,
+      "lcp": 163.3415,
+      "cls": 0,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "about-us-mobile.json",
+    "url": "http://127.0.0.1:4321/about-us",
+    "date": "2026-11-12T20:49:22.174Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "mobile",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 660.23765,
+      "lcp": 660.23765,
+      "cls": 0,
+      "tbt": 4.5
+    }
+  },
+  {
+    "file": "contact-desktop.json",
+    "url": "http://127.0.0.1:4321/contact",
+    "date": "2026-11-12T20:50:00.679Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 161.97895,
+      "lcp": 161.97895,
+      "cls": 0,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "contact-mobile.json",
+    "url": "http://127.0.0.1:4321/contact",
+    "date": "2026-11-12T20:49:55.344Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "mobile",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 656.37855,
+      "lcp": 656.37855,
+      "cls": 0,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "donate-desktop.json",
+    "url": "http://127.0.0.1:4321/donate",
+    "date": "2026-11-12T20:50:22.130Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 163.14205,
+      "lcp": 163.14205,
+      "cls": 0,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "donate-mobile.json",
+    "url": "http://127.0.0.1:4321/donate",
+    "date": "2026-11-12T20:50:16.726Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "mobile",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 656.33235,
+      "lcp": 656.33235,
+      "cls": 0,
+      "tbt": 2.5
+    }
+  },
+  {
+    "file": "faq-desktop.json",
+    "url": "http://127.0.0.1:4321/faq",
+    "date": "2026-11-12T20:50:11.384Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 161.86995,
+      "lcp": 161.86995,
+      "cls": 0,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "faq-mobile.json",
+    "url": "http://127.0.0.1:4321/faq",
+    "date": "2026-11-12T20:50:06.027Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "mobile",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 601.1751,
+      "lcp": 601.1751,
+      "cls": 0,
+      "tbt": 1
+    }
+  },
+  {
+    "file": "home-desktop.json",
+    "url": "http://127.0.0.1:4321/",
+    "date": "2026-11-12T20:49:16.617Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 163.2098,
+      "lcp": 242.4196,
+      "cls": 0,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "home-mobile.json",
+    "url": "http://127.0.0.1:4321/",
+    "date": "2026-11-12T20:49:11.045Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "mobile",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 663.1268,
+      "lcp": 663.1268,
+      "cls": 0,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "partnerships-desktop.json",
+    "url": "http://127.0.0.1:4321/partnerships",
+    "date": "2026-11-12T20:49:38.897Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 163.8201,
+      "lcp": 163.8201,
+      "cls": 0.0002068515052680734,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "partnerships-mobile.json",
+    "url": "http://127.0.0.1:4321/partnerships",
+    "date": "2026-11-12T20:49:33.465Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "mobile",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 656.40795,
+      "lcp": 656.40795,
+      "cls": 0.000321937336112936,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "testimonials-desktop.json",
+    "url": "http://127.0.0.1:4321/testimonials",
+    "date": "2026-11-12T20:49:49.878Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 162.98335,
+      "lcp": 162.98335,
+      "cls": 0,
+      "tbt": 0
+    }
+  },
+  {
+    "file": "testimonials-mobile.json",
+    "url": "http://127.0.0.1:4321/testimonials",
+    "date": "2026-11-12T20:49:44.431Z",
+    "lighthouseVersion": "13.6.0",
+    "mode": "mobile",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "fcp": 655.4003,
+      "lcp": 655.4003,
+      "cls": 0,
+      "tbt": 2
+    }
+  }
+]

@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';import worker,{prefersMarkdown}from'../cloudflare/worker.mjs';
+assert(prefersMarkdown('text/markdown'));
+assert(!prefersMarkdown('text/markdown;q=0, text/html'));
+assert(!prefersMarkdown('text/html,text/markdown;q=0.5'));
+assert(!prefersMarkdown('*/*'));
+let requested;
+const env={PREVIEW:'true',ASSETS:{fetch:async req=>{requested=new URL(req.url).pathname;return new Response('content',{headers:{'Content-Type':'text/html'}})}}};
+let r=await worker.fetch(new Request('https://example.com/about-us',{headers:{Accept:'text/markdown'}}),env);assert.equal(requested,'/about-us.md');assert.match(r.headers.get('Content-Type'),/text\/markdown/);assert.equal(r.headers.get('Vary'),'Accept');assert.equal(r.headers.get('X-Robots-Tag'),'noindex, nofollow');assert(r.headers.get('Link').includes('/about-us.md'));
+r=await worker.fetch(new Request('https://example.com/',{method:'HEAD'}),env);assert.equal(await r.text(),'');
+r=await worker.fetch(new Request('https://example.com/',{method:'POST'}),env);assert.equal(r.status,405);
+r=await worker.fetch(new Request('https://example.com/missing',{headers:{Accept:'text/markdown'}}),{ASSETS:{fetch:async()=>new Response('Missing',{status:404})}});assert.equal(r.status,404);assert(!r.headers.has('X-Robots-Tag'));
+console.log('PASS: Markdown negotiation, q-values, discovery headers, preview noindex, HEAD, 405, 404.');

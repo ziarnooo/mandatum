@@ -1,0 +1,6 @@
+---
+import Layout from '../layouts/Layout.astro';import faq from '../data/faq.json';
+const groups=[...new Set(faq.map(q=>q.category))];const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+const schema=[{'@type':'FAQPage',mainEntity:faq.map(q=>({'@type':'Question',name:q.question,acceptedAnswer:{'@type':'Answer',text:q.answer}}))}];
+---
+<Layout title="Frequently asked questions" description="Answers about Mandatum Fellowships, industry immersion, hosting a Fellow, and supporting the Foundation." schema={schema}><section class="page-hero"><div class="container"><p class="eyebrow">A little clarity for the next chapter</p><h1>Your questions.<br/>Answered.</h1><p class="lead">Explore our Fellowship FAQs. For anything else, our team is here to help.</p></div></section><section class="section"><div class="container faq-layout"><nav class="faq-nav" aria-label="FAQ categories">{groups.map(group=><a href={`#${slug(group)}`}>{group}</a>)}<a href="/contact">Ask us a question →</a></nav><div>{groups.map(group=><section class="faq-group" id={slug(group)}><h2>{group}</h2>{faq.filter(q=>q.category===group).map(q=><details><summary>{q.question}</summary><p>{q.answer}</p></details>)}</section>)}</div></div></section></Layout>

@@ -1,0 +1,12 @@
+{
+  "name": "The Mandatum Foundation",
+  "email": "info@themandatum.org",
+  "intro": "At The Mandatum Foundation, we are dedicated to ensuring retiring Special Operations members transition successfully and smoothly into civilian life. Through individualized executive coaching, strategic networking, hands-on work experience, mentorship, and exposure to new skills or trades, we help them bridge resume gaps, explore certification pathways, and secure meaningful post-service employment.",
+  "mission": "We prepare retiring elite Special Operations members for fulfilling civilian careers, empowering them to shape their next chapter with confidence and purpose.",
+  "vision": "To be the trusted partner for retiring elite Special Operations members empowering purposeful transitions and building a strong and supportive network beyond service.",
+  "metrics": [{"value":60,"label":"Fellows supported through transition"},{"value":21,"label":"Immersion experiences completed"}],
+  "metricsNote":"Figures from our previous website. Updated totals are being confirmed.",
+  "donations": {"paypal":"https://www.paypal.com/paypalme/themandatum","venmo":"https://account.venmo.com/u/themandatum","zeffy":null,"zeffyQr":null},
+  "address": {"street":"313 Oyster Lane","city":"Virginia Beach","state":"VA","zip":"23456"},
+  "taxId":"92-0499620"
+}

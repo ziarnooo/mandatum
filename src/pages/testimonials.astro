@@ -1,0 +1,4 @@
+---
+import Layout from '../layouts/Layout.astro';import testimonials from '../data/testimonials.json';
+---
+<Layout title="Testimonials" description="In their own words: Mandatum Fellows share their experiences of transition, coaching, and connection."><section class="page-hero"><div class="container"><p class="eyebrow">In their own words</p><h1>New chapters.<br/>Lasting impact.</h1><p class="lead">Stories from the Fellows at the heart of our mission.</p></div></section><section class="section"><div class="container">{testimonials.map(t=><figure class="quote"><blockquote><p>{t.text}</p></blockquote><figcaption>— {t.name}</figcaption></figure>)}</div></section></Layout>
