@@ -6,3 +6,11 @@ reports/*.json
 .DS_Store
 
 !reports/summary.json
+.dev.vars*
+.wrangler/
+
+pages-dist/
+
+# Archived rejected local draft (retained locally)
+source/versions/
+reports/v3-desktop.jpg

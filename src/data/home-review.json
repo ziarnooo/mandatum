@@ -1,0 +1,21 @@
+{
+ "eyebrow":"For retiring Special Operations members",
+ "title":"Your experience matters.",
+ "titleEnd":"Your next chapter does, too.",
+ "summary":"Build a meaningful civilian career with individualized executive coaching, hands-on industry immersion and a network invested in your future.",
+ "filmTitle":"A new chapter of service.",
+ "filmDescription":"The people and purpose behind helping Special Operations members find their next step in civilian life.",
+ "primary":"Explore the Fellowship",
+ "supportTitle":"A new environment. The same potential.",
+ "supportText":"You bring years of leadership and experience. Mandatum helps you explore where those strengths can take you next — and connect with the people and opportunities to get there.",
+ "pillars":[
+  {"title":"Industry Immersion","outcome":"Experience the work firsthand.","text":"Explore civilian organizations, shadow executives and work alongside teams to better understand the opportunities ahead."},
+  {"title":"Executive Coaching","outcome":"Find clarity in your next step.","text":"One-on-one guidance helps you understand your strengths, communicate your experience and prepare for civilian career opportunities."},
+  {"title":"Strategic Networking","outcome":"Meet people who open doors.","text":"Connect with executive leaders, mentors and peers to explore career paths and build relationships beyond military service."}
+ ],
+ "paths":[
+  {"audience":"For future Fellows","title":"Find your next direction.","text":"Learn about the Fellowship and talk with our team about your transition.","label":"Explore the Fellowship","url":"/faq"},
+  {"audience":"For organizations","title":"Make room for proven leadership.","text":"Introduce a Fellow to your industry through hands-on experience and meaningful connections.","label":"Host a Fellow","url":"/partnerships"},
+  {"audience":"For supporters","title":"Help make the next chapter possible.","text":"Support the Foundation’s work helping Special Operations members move into civilian careers.","label":"Donate now","url":"/donate"}
+ ]
+}

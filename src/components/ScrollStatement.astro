@@ -1,0 +1,5 @@
+---
+const {text}=Astro.props;
+const accent=new Set(['Special','Operations','executive','coaching,','mentorship,','meaningful','post-service','employment.']);
+---
+<section class="statement-section"><div class="container"><p class="eyebrow">The experience is already there.</p><p class="scroll-statement" data-scroll-statement>{text.split(/\s+/).map(word=><><span class:list={['statement-word',{'accent-word':accent.has(word)}]}>{word}</span>{' '}</>)}</p></div></section>

@@ -60,14 +60,16 @@
     "role": "Board Member and Founder",
     "group": "Board of Directors",
     "bio": "",
-    "image": null
+    "image": "/assets/gary-landuyt-original.webp",
+    "social": "https://www.linkedin.com/in/gary-landuyt"
   },
   {
     "name": "Gary Landuyt",
     "role": "Chair",
     "group": "Board of Advisors",
     "bio": "",
-    "image": null
+    "image": "/assets/gary-landuyt-original.webp",
+    "social": "https://www.linkedin.com/in/gary-landuyt"
   },
   {
     "name": "James Darby",
@@ -81,14 +83,16 @@
     "role": "Member",
     "group": "Board of Advisors",
     "bio": "",
-    "image": null
+    "image": "/assets/rob-madore.webp",
+    "social": "https://www.linkedin.com/in/robertmadore"
   },
   {
     "name": "Bob Freese",
     "role": "Member",
     "group": "Board of Advisors",
     "bio": "",
-    "image": null
+    "image": null,
+    "social": "https://www.linkedin.com/in/bobfreese"
   },
   {
     "name": "Edward Burch",

@@ -1,268 +1,464 @@
 [
   {
     "file": "about-us-desktop.json",
+    "date": "2026-11-13T13:53:29.208Z",
     "url": "http://127.0.0.1:4321/about-us",
-    "date": "2026-11-12T20:49:27.845Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "desktop",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 163.3415,
-      "lcp": 163.3415,
-      "cls": 0,
-      "tbt": 0
     }
   },
   {
     "file": "about-us-mobile.json",
+    "date": "2026-11-13T13:53:23.150Z",
     "url": "http://127.0.0.1:4321/about-us",
-    "date": "2026-11-12T20:49:22.174Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "mobile",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 660.23765,
-      "lcp": 660.23765,
-      "cls": 0,
-      "tbt": 4.5
     }
   },
   {
     "file": "contact-desktop.json",
+    "date": "2026-11-13T13:54:04.682Z",
     "url": "http://127.0.0.1:4321/contact",
-    "date": "2026-11-12T20:50:00.679Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "desktop",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 161.97895,
-      "lcp": 161.97895,
-      "cls": 0,
-      "tbt": 0
     }
   },
   {
     "file": "contact-mobile.json",
+    "date": "2026-11-13T13:53:58.826Z",
     "url": "http://127.0.0.1:4321/contact",
-    "date": "2026-11-12T20:49:55.344Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "mobile",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 656.37855,
-      "lcp": 656.37855,
-      "cls": 0,
-      "tbt": 0
     }
   },
   {
     "file": "donate-desktop.json",
+    "date": "2026-11-13T13:54:27.996Z",
     "url": "http://127.0.0.1:4321/donate",
-    "date": "2026-11-12T20:50:22.130Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "desktop",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 163.14205,
-      "lcp": 163.14205,
-      "cls": 0,
-      "tbt": 0
     }
   },
   {
     "file": "donate-mobile.json",
+    "date": "2026-11-13T13:54:22.213Z",
     "url": "http://127.0.0.1:4321/donate",
-    "date": "2026-11-12T20:50:16.726Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "mobile",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 656.33235,
-      "lcp": 656.33235,
-      "cls": 0,
-      "tbt": 2.5
     }
   },
   {
     "file": "faq-desktop.json",
+    "date": "2026-11-13T13:54:16.470Z",
     "url": "http://127.0.0.1:4321/faq",
-    "date": "2026-11-12T20:50:11.384Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "desktop",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 161.86995,
-      "lcp": 161.86995,
-      "cls": 0,
-      "tbt": 0
     }
   },
   {
     "file": "faq-mobile.json",
+    "date": "2026-11-13T13:54:10.771Z",
     "url": "http://127.0.0.1:4321/faq",
-    "date": "2026-11-12T20:50:06.027Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "mobile",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 601.1751,
-      "lcp": 601.1751,
-      "cls": 0,
-      "tbt": 1
     }
   },
   {
     "file": "home-desktop.json",
+    "date": "2026-11-13T13:53:16.840Z",
     "url": "http://127.0.0.1:4321/",
-    "date": "2026-11-12T20:49:16.617Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "desktop",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 163.2098,
-      "lcp": 242.4196,
-      "cls": 0,
-      "tbt": 0
     }
   },
   {
     "file": "home-mobile.json",
+    "date": "2026-11-13T13:53:10.594Z",
     "url": "http://127.0.0.1:4321/",
-    "date": "2026-11-12T20:49:11.045Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "mobile",
     "scores": {
-      "performance": 100,
+      "performance": 99,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 663.1268,
-      "lcp": 663.1268,
-      "cls": 0,
-      "tbt": 0
     }
   },
   {
     "file": "partnerships-desktop.json",
+    "date": "2026-11-13T13:53:41.314Z",
     "url": "http://127.0.0.1:4321/partnerships",
-    "date": "2026-11-12T20:49:38.897Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "desktop",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 163.8201,
-      "lcp": 163.8201,
-      "cls": 0.0002068515052680734,
-      "tbt": 0
     }
   },
   {
     "file": "partnerships-mobile.json",
+    "date": "2026-11-13T13:53:35.457Z",
     "url": "http://127.0.0.1:4321/partnerships",
-    "date": "2026-11-12T20:49:33.465Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "mobile",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 656.40795,
-      "lcp": 656.40795,
-      "cls": 0.000321937336112936,
-      "tbt": 0
+    }
+  },
+  {
+    "file": "review-v2-about-us-index-desktop.json",
+    "date": "2026-11-12T23:01:33.746Z",
+    "url": "http://127.0.0.1:4321/review/v2/about-us/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-about-us-index-mobile.json",
+    "date": "2026-11-12T23:01:28.193Z",
+    "url": "http://127.0.0.1:4321/review/v2/about-us/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-contact-index-desktop.json",
+    "date": "2026-11-12T23:02:07.099Z",
+    "url": "http://127.0.0.1:4321/review/v2/contact/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-contact-index-mobile.json",
+    "date": "2026-11-12T23:02:01.689Z",
+    "url": "http://127.0.0.1:4321/review/v2/contact/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-donate-index-desktop.json",
+    "date": "2026-11-12T23:02:28.877Z",
+    "url": "http://127.0.0.1:4321/review/v2/donate/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-donate-index-mobile.json",
+    "date": "2026-11-12T23:02:23.444Z",
+    "url": "http://127.0.0.1:4321/review/v2/donate/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-faq-index-desktop.json",
+    "date": "2026-11-12T23:02:18.005Z",
+    "url": "http://127.0.0.1:4321/review/v2/faq/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-faq-index-mobile.json",
+    "date": "2026-11-12T23:02:12.505Z",
+    "url": "http://127.0.0.1:4321/review/v2/faq/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-index-desktop.json",
+    "date": "2026-11-12T23:02:57.296Z",
+    "url": "http://127.0.0.1:4321/review/v2/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-index-mobile.json",
+    "date": "2026-11-12T23:02:51.656Z",
+    "url": "http://127.0.0.1:4321/review/v2/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-partnerships-index-desktop.json",
+    "date": "2026-11-12T23:01:45.082Z",
+    "url": "http://127.0.0.1:4321/review/v2/partnerships/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-partnerships-index-mobile.json",
+    "date": "2026-11-12T23:01:39.529Z",
+    "url": "http://127.0.0.1:4321/review/v2/partnerships/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-testimonials-index-desktop.json",
+    "date": "2026-11-12T23:01:56.150Z",
+    "url": "http://127.0.0.1:4321/review/v2/testimonials/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v2-testimonials-index-mobile.json",
+    "date": "2026-11-12T23:01:50.688Z",
+    "url": "http://127.0.0.1:4321/review/v2/testimonials/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v3-about-us-index-desktop.json",
+    "date": "2026-11-13T13:48:18.667Z",
+    "url": "http://127.0.0.1:4321/review/v3/about-us/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v3-about-us-index-mobile.json",
+    "date": "2026-11-13T13:48:12.151Z",
+    "url": "http://127.0.0.1:4321/review/v3/about-us/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v3-contact-index-desktop.json",
+    "date": "2026-11-13T13:20:52.682Z",
+    "url": "http://127.0.0.1:4321/review/v3/contact/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 63
+    }
+  },
+  {
+    "file": "review-v3-contact-index-mobile.json",
+    "date": "2026-11-13T13:20:46.939Z",
+    "url": "http://127.0.0.1:4321/review/v3/contact/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 63
+    }
+  },
+  {
+    "file": "review-v3-donate-index-desktop.json",
+    "date": "2026-11-13T13:21:17.030Z",
+    "url": "http://127.0.0.1:4321/review/v3/donate/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 63
+    }
+  },
+  {
+    "file": "review-v3-donate-index-mobile.json",
+    "date": "2026-11-13T13:21:11.025Z",
+    "url": "http://127.0.0.1:4321/review/v3/donate/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 63
+    }
+  },
+  {
+    "file": "review-v3-faq-index-desktop.json",
+    "date": "2026-11-13T13:21:05.091Z",
+    "url": "http://127.0.0.1:4321/review/v3/faq/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 63
+    }
+  },
+  {
+    "file": "review-v3-faq-index-mobile.json",
+    "date": "2026-11-13T13:20:58.507Z",
+    "url": "http://127.0.0.1:4321/review/v3/faq/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 63
+    }
+  },
+  {
+    "file": "review-v3-index-desktop.json",
+    "date": "2026-11-13T13:54:46.030Z",
+    "url": "http://127.0.0.1:4321/review/v3/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v3-index-mobile.json",
+    "date": "2026-11-13T13:54:39.276Z",
+    "url": "http://127.0.0.1:4321/review/v3/index.html",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v3-partnerships-index-desktop.json",
+    "date": "2026-11-13T13:20:28.343Z",
+    "url": "http://127.0.0.1:4321/review/v3/partnerships/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v3-partnerships-index-mobile.json",
+    "date": "2026-11-13T13:20:20.943Z",
+    "url": "http://127.0.0.1:4321/review/v3/partnerships/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  },
+  {
+    "file": "review-v3-testimonials-index-desktop.json",
+    "date": "2026-11-13T13:48:01.526Z",
+    "url": "http://127.0.0.1:4321/review/v3/testimonials/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 63
+    }
+  },
+  {
+    "file": "review-v3-testimonials-index-mobile.json",
+    "date": "2026-11-13T13:47:55.214Z",
+    "url": "http://127.0.0.1:4321/review/v3/testimonials/index.html",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 63
     }
   },
   {
     "file": "testimonials-desktop.json",
+    "date": "2026-11-13T13:53:53.008Z",
     "url": "http://127.0.0.1:4321/testimonials",
-    "date": "2026-11-12T20:49:49.878Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "desktop",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 162.98335,
-      "lcp": 162.98335,
-      "cls": 0,
-      "tbt": 0
     }
   },
   {
     "file": "testimonials-mobile.json",
+    "date": "2026-11-13T13:53:47.243Z",
     "url": "http://127.0.0.1:4321/testimonials",
-    "date": "2026-11-12T20:49:44.431Z",
-    "lighthouseVersion": "13.6.0",
-    "mode": "mobile",
     "scores": {
       "performance": 100,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
-    },
-    "metrics": {
-      "fcp": 655.4003,
-      "lcp": 655.4003,
-      "cls": 0,
-      "tbt": 2
     }
   }
 ]

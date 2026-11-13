@@ -1,0 +1,48 @@
+/* Vertical reading gesture drives the horizontal story sequence. */
+.variant-v3 .testimonial-runway{position:relative;width:100%;height:var(--story-runway-height,calc(clamp(390px,calc(100vh - 60px),720px) + max(1040px,170vh)))}
+.variant-v3 .testimonial-stage{position:sticky;top:16px;height:var(--story-stage-height,clamp(390px,calc(100vh - 60px),720px));display:flex;flex-direction:column;justify-content:center;gap:20px;overflow:hidden}
+.variant-v3 .testimonial-scroll-tools{display:flex;align-items:center;justify-content:space-between;gap:20px;width:calc(100% - 96px);margin:0 auto}
+.testimonial-scroll-tools>p{margin:0;font-size:14px;color:#526370}
+.testimonial-scroll-actions{display:flex;gap:8px;align-items:center}
+.testimonial-scroll-actions button{border:1px solid #829bb0;background:transparent;color:#003462;padding:8px 14px;min-height:40px;font:14px/1.4 'Helvetica Neue',Helvetica,Arial,sans-serif;cursor:pointer}
+.testimonial-scroll-actions button:disabled{opacity:.35;cursor:default}
+.testimonial-scroll-actions button:focus-visible,.testimonial-full-story:focus-visible,.testimonial-dialog button:focus-visible{outline:3px solid #7395ac;outline-offset:4px}
+.variant-v3 .testimonial-stage .testimonial-grid{width:100%;max-width:none;margin:0;padding:0 8%;gap:24px;display:flex;align-items:center;overflow:hidden;scroll-snap-type:none;scroll-behavior:auto;flex:1;min-height:0;touch-action:pan-y}
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote{flex:0 0 100%;width:auto;margin:0;min-width:0;min-height:0;height:82%;max-height:100%;padding:32px 40px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;transition:height 450ms cubic-bezier(.22,1,.36,1),opacity 350ms ease;opacity:1;scroll-snap-align:none}
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote.is-scroll-active{height:100%;opacity:1}
+.variant-v3 .testimonial-stage .full-quote .quote-art,.variant-v3 .testimonial-stage .full-quote:after{height:100%;position:absolute;inset:0;pointer-events:none}
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote .quote-content,.variant-v3 .testimonial-stage .testimonial-grid .full-quote:is(:hover,:focus-within,.is-expanded) .quote-content{max-height:120px;min-height:0;overflow:hidden;flex:0 1 auto;mask-image:linear-gradient(#000 70%,transparent);transition:max-height 450ms cubic-bezier(.22,1,.36,1)}
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote.is-scroll-active .quote-content{max-height:var(--story-quote-height,clamp(170px,calc(100vh - 280px),500px))}
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote blockquote{margin:0;font-size:clamp(19px,2vw,27px);line-height:1.5}
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote blockquote p{margin:0}
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote figcaption{font-size:14px;margin:24px 0 20px;padding:0;color:#d7e3eb;flex:none}
+.testimonial-full-story{align-self:flex-start;background:transparent;border:1px solid #a6bbc9;color:white;padding:10px 16px;min-height:42px;font:14px/1.4 'Helvetica Neue',Helvetica,Arial,sans-serif;cursor:pointer;flex:none}
+.testimonial-scroll-meter{width:calc(100% - 96px);height:2px;flex:none;background:#d6dfe5;margin:0 auto}
+.testimonial-scroll-meter i{display:block;width:100%;height:100%;background:#003462;transform:scaleX(var(--story-progress,0));transform-origin:left}
+.variant-v3 .testimonial-dialog{position:fixed;inset:0;margin:auto;width:min(760px,calc(100vw - 40px));max-height:85dvh;overflow:auto;padding:50px 40px 40px;background:#f8f8f4;color:#14344a;border:1px solid #b4c5d0;border-radius:0;overscroll-behavior:contain}
+.testimonial-dialog::backdrop{background:#00192ab3;backdrop-filter:blur(4px)}
+.testimonial-dialog .testimonial-dialog-close{position:absolute;right:18px;top:14px;background:transparent;border:0;padding:8px 12px;color:#003462;font:14px Arial,sans-serif;cursor:pointer}
+.variant-v3 .testimonial-dialog h2{font-size:28px;line-height:1.2;margin:5px 0 25px}
+.variant-v3 .testimonial-dialog blockquote{margin:0;font:300 18px/1.7 'Helvetica Neue',Helvetica,Arial,sans-serif}
+.variant-v3 .testimonial-dialog blockquote p{margin:0}
+.variant-v3 .testimonial-runway.is-reduced{height:auto!important}
+.variant-v3 .testimonial-runway.is-reduced .testimonial-stage{position:static;height:auto!important;overflow:visible}
+.variant-v3 .testimonial-runway.is-reduced .testimonial-grid{display:grid;grid-template-columns:1fr;overflow:visible;padding:0 24px;gap:24px}
+.variant-v3 .testimonial-runway.is-reduced .testimonial-grid .full-quote{height:auto!important;max-height:none!important;opacity:1!important}
+.variant-v3 .testimonial-runway.is-reduced .testimonial-grid .full-quote .quote-content{max-height:none!important;overflow:visible!important;mask:none!important}
+.testimonial-runway.is-reduced :is(.testimonial-scroll-tools,.testimonial-scroll-meter,.testimonial-full-story){display:none}
+@media(max-width:760px){.variant-v3 .testimonial-stage{top:10px;gap:15px}.variant-v3 .testimonial-scroll-tools,.testimonial-scroll-meter{width:calc(100% - 40px)}.testimonial-scroll-tools>p{font-size:12px}.testimonial-scroll-actions button{padding:8px 10px;font-size:12px}.variant-v3 .testimonial-stage .testimonial-grid{padding-inline:6%;gap:16px}.variant-v3 .testimonial-stage .testimonial-grid .full-quote{padding:26px 22px}.variant-v3 .testimonial-stage .testimonial-grid .full-quote blockquote{font-size:20px;line-height:1.5}.variant-v3 .testimonial-stage .testimonial-grid .full-quote figcaption{font-size:12px;margin:20px 0 16px}.variant-v3 .testimonial-dialog{padding:48px 24px 28px}.variant-v3 .testimonial-dialog blockquote{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.testimonial-stage *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* The server-rendered first frame matches the enhanced track. */
+.testimonial-runway:not(.is-ready) .full-quote,.testimonial-runway:not(.is-ready) .quote-content{transition:none!important}
+@media(prefers-reduced-motion:reduce),(scripting:none){.variant-v3 .testimonial-runway{height:auto!important}.variant-v3 .testimonial-stage{position:static;height:auto!important;overflow:visible}.variant-v3 .testimonial-stage .testimonial-grid{display:grid;grid-template-columns:1fr;overflow:visible;padding:0 24px;gap:24px}.variant-v3 .testimonial-stage .testimonial-grid .full-quote{height:auto!important;max-height:none!important;opacity:1!important}.variant-v3 .testimonial-stage .testimonial-grid .full-quote .quote-content{max-height:none!important;overflow:visible!important;mask:none!important}.testimonial-scroll-tools,.testimonial-scroll-meter,.testimonial-full-story{display:none}}
+
+.testimonial-runway:not(.is-ready) :is(.testimonial-scroll-tools,.testimonial-full-story){visibility:hidden}
+
+/* Complete source quotes, at a comfortable reading size. */
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote .quote-content,.variant-v3 .testimonial-stage .testimonial-grid .full-quote.is-scroll-active .quote-content,.variant-v3 .testimonial-stage .testimonial-grid .full-quote:is(:hover,:focus-within,.is-expanded) .quote-content{max-height:none;overflow:visible;mask:none;flex:none}
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote blockquote{font-size:16px;line-height:1.55}
+.variant-v3 .testimonial-stage .testimonial-grid .full-quote{padding:24px 36px;overflow:visible}
+.variant-v3 .testimonial-stage{top:90px;height:calc(100vh - 110px)}
+@media(max-width:760px){.variant-v3 .testimonial-runway{height:auto!important}.variant-v3 .testimonial-stage{position:static;height:auto!important;overflow:visible}.variant-v3 .testimonial-stage .testimonial-grid{display:grid;padding:0 20px;gap:24px;overflow:visible}.variant-v3 .testimonial-stage .testimonial-grid .full-quote{height:auto;max-height:none;padding:28px 24px}.testimonial-scroll-tools,.testimonial-scroll-meter{display:none}}

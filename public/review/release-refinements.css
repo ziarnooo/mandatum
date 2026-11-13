@@ -1,0 +1,67 @@
+/* Release V2: photographic transition, quieter exterior texture. */
+.variant-v3{position:relative;isolation:isolate;overflow-x:clip}
+.variant-v3 main{background:var(--paper)}
+.margin-camo{position:absolute;inset:760px 0 auto;height:2100px;z-index:-1;pointer-events:none;opacity:.07;background-size:280px 560px;mask-image:linear-gradient(transparent,#000 12%,transparent 36%,transparent 57%,#000 76%,transparent)}
+.variant-v3 .hero-image[data-military-theme=wardrobe]>.wardrobe-morph{opacity:.72}
+.variant-v3 .hero-image[data-military-theme=wardrobe]{background:#dce3e8}
+.variant-v3 .hero-image:after{background:linear-gradient(130deg,#f8f8f40d,#0b24340a)}
+.variant-v3 .artwork-story-image{overflow:hidden;isolation:isolate}
+.variant-v3 .artwork-story-image img{transform:scale(1.65);object-position:50% 48%;filter:saturate(.76);transition:none}
+@media(max-width:1240px){.margin-camo{display:none}}
+@media(max-width:760px){.variant-v3 .artwork-story-image img{transform:scale(1.45)}}
+/* Consistent square framing and photographic light. */
+.variant-v3 .experience-symbol,.variant-v3 .mandatum-process,.variant-v3 .profile-initials,.variant-v3 .linkedin-mark,.variant-v3 .film-frame,.variant-v3 .profile-progress button:before,.variant-v3 .profile-progress .progress-fill{border-radius:0}
+.variant-v3 .profile-progress button:before{background:#ffffff40}.variant-v3 .profile-progress .progress-fill{background:#fff}
+.variant-v3 .profile-story:is([data-stage="5"],[data-stage="6"]) .mandatum-process:before{animation:none;opacity:0}
+.variant-v3 .button:before{background:radial-gradient(180px 100px at var(--pointer-x,50%) var(--pointer-y,50%),#e4f5ff 0%,#85b9d9 28%,#32678d80 60%,transparent 100%);padding:2px;transition:opacity 400ms ease}
+.variant-v3 .hero-image>.photo-light{position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(280px circle at var(--light-x,50%) var(--light-y,50%),#ffffff65,transparent 75%);mix-blend-mode:soft-light;opacity:var(--light-on,0);transition:opacity 500ms ease}
+.variant-v3 .hero-image .profile-sequence{position:relative;z-index:2}
+.variant-v3 .wardrobe-pillar .wardrobe-morph>img{transform:scale(1.65);object-position:50% 45%;filter:blur(var(--wardrobe-blur,0px));transition:none}
+.variant-v3 .pillar-card,.variant-v3 .pillar-diagram,.variant-v3 .wardrobe-pillar{border-style:solid}
+.variant-v3 .artwork-story-image img{transform:none;object-position:center;filter:none}
+.variant-v3 .route-grid>a{position:relative;isolation:isolate;overflow:hidden}
+.variant-v3 .route-grid>a>span{position:relative;z-index:2}
+.variant-v3 .route-grid .route-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;filter:blur(8px) saturate(.5);transform:scale(1.12);transition:opacity 650ms ease,filter 750ms ease,transform 900ms cubic-bezier(.22,1,.36,1);z-index:-1}
+.variant-v3 .route-grid>a:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#003462d9,#00346288);z-index:0;pointer-events:none}
+.variant-v3 .route-grid>a:is(:hover,:focus-visible) .route-photo{opacity:1;filter:blur(0) saturate(.65);transform:scale(1)}
+.variant-v3 .route-grid>a:is(:hover,:focus-visible){background:#003462}
+.variant-v3 .hero-flap .cipher-cell{transition:width 300ms ease;overflow:hidden;vertical-align:baseline}
+.variant-v3 .site-header{position:sticky;top:0;z-index:100;background:var(--paper)}
+.variant-v3 .value-cards article{top:calc(105px + var(--card-index)*88px)!important;padding:24px 32px 32px!important}
+.variant-v3 .value-cards article h3{font-size:30px;margin:0 0 24px;line-height:40px}
+.variant-v3 footer{overflow:hidden;isolation:isolate}.pixel-camo{position:absolute;pointer-events:none;inset:0;width:100%;height:100%;z-index:-1;opacity:.14}.margin-camo{height:100%;top:650px;mask-image:linear-gradient(transparent,#000 10%,#000 85%,transparent);opacity:.08}
+.variant-v3 .film-frame{transform:scale(var(--film-scale,1));transform-origin:center;will-change:transform}
+@media(max-width:950px){.variant-v3 .mobile-navigation>nav{position:fixed;inset:75px 0 0;max-height:none;height:calc(100dvh - 75px);padding:clamp(24px,6vh,64px) 28px;justify-content:center;box-shadow:none;z-index:99}.variant-v3 .mobile-navigation>nav a{font-size:clamp(23px,4vh,36px);padding:16px 8px}.variant-v3 .mobile-navigation>summary{position:relative;z-index:101}}
+@media(max-width:760px){.variant-v3 .value-cards article{top:calc(82px + var(--card-index)*70px)!important;padding:18px 22px 28px!important}.variant-v3 .value-cards article h3{font-size:22px;line-height:32px}.variant-v3 .wardrobe-pillar .wardrobe-morph>img{transform:scale(1.55)}}
+@media(prefers-reduced-motion:reduce){.variant-v3 .film-frame{transform:none}.variant-v3 .route-grid .route-photo{transition:none}.variant-v3 .value-cards article{position:static!important}}
+.route-grain{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;pointer-events:none;z-index:1}
+.variant-v3 .pathways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-block:1px solid var(--line);margin:0 -48px}
+.variant-v3 .pathways article{border:0;border-right:1px solid var(--line);background:transparent;padding:40px 32px;border-radius:0;display:flex;flex-direction:column;align-items:flex-start}
+.variant-v3 .pathways article:last-child{border-right:0}.variant-v3 .pathways article .button{margin-top:auto}.variant-v3 .pathways h3{font-size:28px}
+.variant-v3 .pillars>*{border-right-style:solid!important}.variant-v3 .pillar-visual{border-style:solid!important}
+@media(max-width:760px){.variant-v3 .pathways{grid-template-columns:1fr;margin:0 -24px}.variant-v3 .pathways article{border-right:0;border-bottom:1px solid var(--line);padding:32px 24px}.variant-v3 .pathways article:last-child{border-bottom:0}}
+.variant-v3 .person-profile>img,.variant-v3 .review-controls,.variant-v3 .person-dialog,.variant-v3 .partner-logo-trigger{border-radius:0}
+/* Fine one-pixel separators; no browser-default medium borders on image cells. */
+.variant-v3 .pillar-diagram,.variant-v3 .wardrobe-pillar{border:0;outline:0;box-shadow:none}
+.variant-v3 .pillars>.pillar{border-right:1px solid var(--line)!important}.variant-v3 .pillars>.pillar:last-child{border-right:0!important}
+.variant-v3 .photo-reveal{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;image-rendering:auto}
+.variant-v3 .wardrobe-morph>.wardrobe-after,.variant-v3 .route-grid>a .route-photo{visibility:hidden!important}
+.variant-v3 .route-grid>a>.photo-reveal{z-index:-1}
+.variant-v3 .hero-image>.photo-light{display:none}
+.variant-v3 .pixel-camo{opacity:.55;mask-image:none;pointer-events:none}
+.variant-v3 .margin-camo{position:fixed;inset:0;width:100vw;height:100vh;opacity:.55;z-index:-1;mask-image:none}
+@media(max-width:760px){.variant-v3 .pillars>.pillar{border-right:0!important;border-bottom:1px solid var(--line)}}
+/* Preserve italic overshoot: glyphs are never clipped by their individual cells. */
+.variant-v3 .hero-flap,.variant-v3 .hero-flap .cipher-cell,.variant-v3 .hero-flap .cipher-space{overflow:visible}
+.variant-v3 .hero-flap{padding-right:.12em}
+.variant-v3 .scroll-statement{font-size:clamp(23px,2.5vw,34px);line-height:1.55;letter-spacing:-.025em;word-spacing:normal;max-width:34em}
+.variant-v3 .scroll-statement .statement-word{display:inline;letter-spacing:inherit;word-spacing:normal;margin:0;padding:0}
+.variant-v3 .scroll-statement .accent-word{display:inline-block;position:relative;cursor:default;vertical-align:baseline}
+.variant-v3 .scroll-statement .accent-word.is-technical{font-family:'Courier New',monospace!important;font-size:.88em;letter-spacing:-.06em;font-weight:400}
+.variant-v3 .support-section{background:radial-gradient(ellipse at 100% 0%,#dce8f080,transparent 48%),var(--paper)}
+.variant-v3 .statement-section{background:radial-gradient(ellipse at 0% 100%,#dce1d680,transparent 52%),var(--paper)}
+.variant-v3 .pathways article{background:radial-gradient(ellipse at 100% 0%,#dce8f040,transparent 70%)}
+.variant-v3 .pathways article:has(a:hover),.variant-v3 .pathways article:has(a:focus-visible){background:radial-gradient(ellipse at 100% 0%,#c5d9e980,transparent 75%)}
+.variant-v3 .extended-grid{border-top-width:0}.variant-v3 .grid-extension{height:1px;border:0;background:#c8d3dc80}
+.variant-v3 .hero-flap{display:inline-flex;align-items:baseline;white-space:nowrap}
+.variant-v3 .hero-flap .cipher-cell:before,.variant-v3 .hero-flap .cipher-space:before{content:'M';visibility:hidden}

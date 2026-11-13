@@ -1,4 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro';import site from '../data/site.json';
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+const siteKey=import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
-<Layout title="Contact" description="Get in touch with The Mandatum Foundation about becoming a Fellow, hosting an immersion, partnerships, or donations."><section class="page-hero"><div class="container"><p class="eyebrow">Start a conversation</p><h1>Your next chapter<br/>starts with a hello.</h1><p class="lead">Interested in a Fellowship, hosting a Fellow, or supporting our mission? We’d love to hear from you.</p></div></section><section class="section"><div class="container split"><div><h2>Let’s connect.</h2><p>Tell us a little about yourself and how we can help.</p><a class="button" href={`mailto:${site.email}`}>Email our team ↗</a><p class="small muted" style="margin-top:18px">Opens your email app. You can also copy the address below.</p></div><div class="contact-panel"><p class="eyebrow">Email</p><p class="lead"><a href={`mailto:${site.email}`}>{site.email}</a></p><p class="eyebrow">Mailing address</p><address class="address">The Mandatum Foundation<br/>{site.address.street}<br/>{site.address.city}, {site.address.state} {site.address.zip}</address></div></div></section></Layout>
+<Layout title="Contact" description="Get in touch with The Mandatum Foundation about becoming a Fellow, hosting an immersion, partnerships, or donations.">
+<section class="page-hero"><div class="container"><p class="eyebrow">Start a conversation</p><h1>Your next chapter<br/>starts with a hello.</h1><p class="lead">Interested in a Fellowship, hosting a Fellow, or supporting our mission? We’d love to hear from you.</p></div></section>
+<section class="section"><div class="container split"><div><p class="eyebrow">We’re here to help</p><h2>Let’s connect.</h2><p>Tell us a little about yourself and how we can help.</p><p><a href={`mailto:${site.email}`}>{site.email}</a></p><address class="address">The Mandatum Foundation<br/>{site.address.street}<br/>{site.address.city}, {site.address.state} {site.address.zip}</address></div>
+<div class="contact-panel"><form id="contact-form" action="/api/contact" method="post" data-ready={siteKey?'true':'false'} aria-describedby="form-note">
+<label for="contact-name">Your name</label><input id="contact-name" name="name" autocomplete="name" required minlength="2" maxlength="100"/>
+<label for="contact-email">Email address</label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254"/>
+<label for="contact-message">How can we help?</label><textarea id="contact-message" name="message" rows="6" required minlength="10" maxlength="5000"></textarea>
+<div class="honeypot" aria-hidden="true"><label for="contact-website">Leave this field empty</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off"/></div>
+<p id="form-note" class="small muted">We use your name, email and message to respond to your enquiry. Please do not include sensitive personal information.</p>
+{siteKey?<><div class="cf-turnstile" data-sitekey={siteKey} data-action="contact" data-theme="light" data-size="flexible"></div><script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script></>:<p class="notice small">Preview only: email sending is not connected yet.</p>}
+<button class="button" type="submit">{siteKey?'Send message':'Check message preview'} <span aria-hidden="true">→</span></button>
+<p id="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+<noscript><p>Please enable JavaScript for spam verification, or email <a href={`mailto:${site.email}`}>{site.email}</a>.</p></noscript>
+</form></div></div></section></Layout>
+<script>
+const form=document.querySelector<HTMLFormElement>('#contact-form');
+const status=document.querySelector<HTMLElement>('#form-status');
+const button=form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+form?.addEventListener('submit',async event=>{
+ event.preventDefault();if(!status||!button)return;
+ if(form.dataset.ready!=='true'){status.textContent='Your message passes the form checks. This is a preview; nothing was sent.';status.focus();return;}
+ button.disabled=true;form.setAttribute('aria-busy','true');status.textContent='Sending your message…';
+ try{const response=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form) as any),signal:AbortSignal.timeout(22000)});const result=await response.json();status.textContent=result.message||'We could not send your message. Please email info@themandatum.org.';if(response.ok&&result.ok)form.reset();}
+ catch{status.textContent='We could not confirm sending. Your message is still here. Please try again later or email info@themandatum.org.';}
+ finally{button.disabled=false;form.removeAttribute('aria-busy');(window as any).turnstile?.reset();status.focus();}
+});
+</script>

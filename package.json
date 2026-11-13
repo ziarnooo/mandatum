@@ -4,10 +4,11 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
-    "build": "astro build && node scripts/postbuild.mjs",
+    "build": "astro build && node scripts/postbuild.mjs && node scripts/build-review.mjs",
     "preview": "astro preview --host 127.0.0.1",
-    "check": "node scripts/check.mjs && node scripts/check-worker.mjs",
-    "audit": "node scripts/audit.mjs"
+    "check": "node scripts/check.mjs && node scripts/check-worker.mjs && node scripts/check-contact.mjs && node scripts/check-review.mjs && node scripts/check-profile-motion.mjs",
+    "audit": "node scripts/audit.mjs",
+    "build:pages": "npm run build && npm run check && node scripts/build-pages.mjs"
   },
   "dependencies": {
     "astro": "^7.4.11",

@@ -1,4 +1,4 @@
 ---
 const {person}=Astro.props;
 ---
-<article class="person">{person.image?<img src={person.image} alt={person.name} width="600" height="675" loading="lazy"/>:<div class="silhouette" role="img" aria-label={`Portrait of ${person.name} coming soon`}><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="65" r="36"/><path d="M25 190v-20a75 75 0 0 1 150 0v20z"/></svg></div>}<h3>{person.name}</h3><p class="role">{person.role}</p>{person.bio&&<details><summary>About {person.name}</summary><p>{person.bio}</p></details>}</article>
+<article class="person" data-social={person.social}>{person.image?<img src={person.image} alt={person.name} width="600" height="675" loading="lazy"/>:<div class="silhouette" role="img" aria-label={`Portrait of ${person.name} coming soon`}><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="65" r="36"/><path d="M25 190v-20a75 75 0 0 1 150 0v20z"/></svg></div>}<h3>{person.name}</h3><p class="role">{person.role}</p>{person.bio&&<details><summary>About {person.name}</summary><p>{person.bio}</p></details>}</article>

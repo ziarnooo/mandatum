@@ -1,3 +1,4 @@
+import {handleContact} from './contact.mjs';
 // Optional Cloudflare hosting adapter. Static Astro output remains portable.
 const routes=new Set(['/','/about-us','/partnerships','/testimonials','/contact','/faq','/donate']);
 export function prefersMarkdown(accept=''){
@@ -8,6 +9,7 @@ export function prefersMarkdown(accept=''){
 }
 export default {async fetch(request,env){
  const url=new URL(request.url);
+ if(url.pathname==='/api/contact')return handleContact(request,env);
  if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405,headers:{Allow:'GET, HEAD'}});
  const path=url.pathname.replace(/\/$/,'')||'/';
  const md=routes.has(path)&&prefersMarkdown(request.headers.get('Accept')||'');
@@ -19,7 +21,7 @@ export default {async fetch(request,env){
  headers.set('Referrer-Policy','strict-origin-when-cross-origin');
  headers.set('X-Frame-Options','DENY');
  headers.set('Permissions-Policy','camera=(), microphone=(), geolocation=()');
- headers.set('Content-Security-Policy',"default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'");
+ headers.set('Content-Security-Policy',"default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com");
  if(env.PREVIEW==='true')headers.set('X-Robots-Tag','noindex, nofollow');
  if(routes.has(path)){
   headers.set('Vary','Accept');

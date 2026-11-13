@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CareerPath from './CareerPath.astro';
+import ScrollStatement from './ScrollStatement.astro';
+import FoundationFilm from './FoundationFilm.astro';
+import content from '../data/home-review.json';
+import site from '../data/site.json';
+const {version='v2'}=Astro.props;
+---
+<Layout title="Civilian careers for Special Operations members" hero>
+
+<div class:list={['review-home',version]}>
+<section class="hero"><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow">{content.eyebrow}</p><h1>{content.title}<br/><em>{content.titleEnd}</em></h1><p>{content.summary}</p><div class="actions"><a class="button" href="/faq">{content.primary} <span aria-hidden="true">→</span></a><a class="button outline" href="/donate">Donate now <span aria-hidden="true">↗</span></a></div><p class="hero-note">Individual guidance. Real experience. Lasting connections.</p></div><div class="hero-image"><img src="/assets/hero.webp" srcset="/assets/hero-small.webp 700w, /assets/hero.webp 1400w" sizes="100vw" alt="A handshake connecting military service and civilian opportunity" width="1400" height="933" fetchpriority="high"/>{version==='v3'&&<CareerPath/>}<span class="hero-caption">The Mandatum Foundation / Beyond the uniform</span></div></div></section>
+{version==='v3'&&<FoundationFilm/>}
+<section class="route-strip" aria-label="Find your next step"><div class="container route-grid">{content.paths.map((path,i)=><a href={path.url}><span class="route-number">0{i+1}</span><span><small>{path.audience}</small><strong>{path.label} <span aria-hidden="true">↗</span></strong></span></a>)}</div></section>
+{version==='v3'&&<section class="artwork-story"><div class="artwork-story-image"><img src="/assets/military-mentoring.webp" alt="Painterly illustration of a service member and a civilian mentor in conversation" width="1400" height="717" srcset="/assets/military-mentoring-small.webp 700w, /assets/military-mentoring.webp 1400w" sizes="(max-width:760px) 100vw, 50vw" loading="lazy"/></div><div><p class="eyebrow">Experience carries forward</p><h2>A different setting.<br/>The same potential.</h2><p>Leadership, judgment and the ability to bring people together. Your experience has a place beyond the uniform.</p><a class="text-link" href="/about-us">Our mission</a></div></section>}
+{version==='v3'?<ScrollStatement text={site.intro}/>:<><section class="section section-line"><div class="container split"><div><p class="eyebrow">The transition</p><h2>{content.supportTitle}</h2></div><div><p class="lead">{content.supportText}</p><p class="muted">{site.intro}</p><a class="text-link" href="/about-us">Meet the Foundation →</a></div></div></section></>}
+<section class="section support-section" id="support"><div class="container"><div class="section-heading"><div><p class="eyebrow">How we help</p><h2>Support built around you.</h2></div><p class="muted section-intro">Three complementary pillars.<br/>One individual transition.</p></div><div class="pillars">{content.pillars.map((pillar,i)=><article class="pillar"><span class="number">0{i+1}</span><p class="eyebrow">{pillar.title}</p><h3>{pillar.outcome}</h3><p>{pillar.text}</p></article>)}</div><a class="text-link" href="/faq">Understand the Fellowship →</a></div></section>
+<section class="section dark impact-section"><div class="container split"><div><p class="eyebrow">Our impact</p><h2>Real experience.<br/>Meaningful progress.</h2><a class="text-link" href="/testimonials">Read our Fellows’ experiences →</a></div><div><div class="metrics">{site.metrics.map(metric=><div class="metric"><strong>{metric.value}</strong><p>{metric.label}</p></div>)}</div><p class="small">{site.metricsNote}</p></div></div></section>
+<section class="section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Take the next step</p><h2>There’s a place for you here.</h2></div></div><div class="pathways">{content.paths.map(path=><article><p class="eyebrow">{path.audience}</p><h3>{path.title}</h3><p class="muted">{path.text}</p><a class="button" href={path.url}>{path.label} <span aria-hidden="true">→</span></a></article>)}</div><div class="conversation"><p>Not sure where to start?</p><a class="text-link" href="/contact">Talk with our team →</a></div></div></section>
+</div>
+</Layout>

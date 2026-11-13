@@ -1,0 +1,18 @@
+---
+import profiles from '../data/career-profiles.json';
+---
+<section class="profile-sequence" aria-label="Illustrative military to civilian career profiles">
+ <div class="profile-selector profile-progress" role="group" aria-label="Choose example profile">{profiles.map((profile,i)=><button type="button" data-select-profile={i} aria-label={`Show ${profile.name}`} aria-pressed={i===0}><span class="progress-fill"></span></button>)}</div>
+ <div class="career-path profile-card">
+ <div class="profile-deck">
+ {profiles.map((profile,index)=><article class="profile-story" hidden={index!==0} data-profile={index} aria-label={`${profile.name}, fictional example`}>
+  <header class="person-profile">{profile.image ? <img src={profile.image} width="96" height="96" alt={`AI-generated portrait for fictional profile ${profile.name}`}/> : <span class="profile-initials" aria-hidden="true">CT</span>}<div><h2>{profile.name} <small class="example-tag">Example</small></h2><p>{profile.headline}</p></div><span class="linkedin-mark" aria-label="LinkedIn-style experience profile">in</span></header>
+  <ol class="experience-list military-experience">{profile.military.map((job,i)=><li data-reveal={i+1}><span class="experience-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="m12 3 8 4v6c0 4-8 8-8 8s-8-4-8-8V7zM8 12l3 3 5-6"/></svg></span><div><h3>{job.title}</h3><p>{job.detail}</p></div></li>)}</ol>
+  <div class="mandatum-process" data-reveal="2"><img src="/assets/signet-navy.svg" width="30" height="44" alt="Mandatum"/><div><div class="process-step" aria-label="Individualized coaching, hands-on immersion, meaningful connections"><span class="process-spinner" aria-hidden="true"></span><span class="step-label">Individualized coaching</span></div></div></div>
+  <ol class="experience-list civilian-experience">{profile.civilian.map((job,i)=><li data-reveal="5"><span class="experience-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M4 7h16v13H4zM8 7V4h8v3M4 12h16M10 12v3h4v-3"/></svg></span><div><h3>{job.title}</h3><p>{job.detail}</p></div></li>)}</ol>
+ </article>)}
+ </div>
+
+ </div>
+ <span class="profile-announcement sr-only" aria-live="polite"></span>
+</section>

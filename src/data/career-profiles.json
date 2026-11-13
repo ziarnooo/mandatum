@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Alex R.",
+    "headline": "From mission systems to technology delivery",
+    "image": "/assets/profile-alex.webp",
+    "military": [
+      {
+        "title": "Communications specialist",
+        "detail": "2012 \u2013 2026 \u00b7 Special Operations"
+      }
+    ],
+    "civilian": [
+      {
+        "title": "Technical project manager",
+        "detail": "Technology delivery \u00b7 New role"
+      }
+    ]
+  },
+  {
+    "name": "Jordan M.",
+    "headline": "From operational readiness to developing people",
+    "image": "/assets/profile-jordan.webp",
+    "military": [
+      {
+        "title": "Training instructor",
+        "detail": "2012 \u2013 2026 \u00b7 Special Operations"
+      }
+    ],
+    "civilian": [
+      {
+        "title": "Learning & development manager",
+        "detail": "Building capable teams \u00b7 New role"
+      }
+    ]
+  },
+  {
+    "name": "Chris T.",
+    "headline": "From complex operations to business leadership",
+    "image": null,
+    "military": [
+      {
+        "title": "Team leader",
+        "detail": "2010 \u2013 2026 \u00b7 Special Operations"
+      }
+    ],
+    "civilian": [
+      {
+        "title": "Operations manager",
+        "detail": "Business operations \u00b7 New role"
+      }
+    ]
+  }
+]
