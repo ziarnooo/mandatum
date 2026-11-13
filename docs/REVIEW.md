@@ -157,3 +157,15 @@ Testimonials now show complete smaller text directly: horizontal scroll sequence
 
 ### Pointer reveal correction — November 13
 Hero pointer interaction now reveals the civilian photograph locally through square camouflage cells; the white light overlay is removed. The existing scroll transition remains. Audience tiles and wardrobe pillars share `pixel-reveal.js` for the same 8px square-cell dissolve. Exterior and footer camouflage is hidden at rest, appears only around the pointer, and pulses slowly (2.6s phase). Pillar image borders are removed; column separators stay 1px. Browser verified military→civilian reveal, local footer footprint, 0px image borders, no console errors and mobile390px without overflow. Motion respects reduced-motion preferences. No publication performed.
+
+## Local candidate — November 13, 2026, after Pages release
+
+Not pushed yet. Continuous pointer trail across margins, section pauses and footer: rounded green camouflage → blue squares → gray glyphs, then fade. Hero photo changes after 90 px of scrolling without pointer pixel effects. Pillar photos use a smaller crop and soft dissolve. Film enlargement persists. Impact contains authentic testimonial excerpts with full-text dialogs; testimonials removed from navigation, Contact moved last. Legacy testimonial URL retained for compatibility. Values preserve all four titles as the stack exits. Footer uses the header logo animation. Active navigation, partner gradients, consistent grid and paragraph spacing updated.
+
+Validation: build and check passed. Local production preview at port 4321; desktop and 390×844 browser checks, testimonial dialog/Escape and mobile menu/Escape checked. Lighthouse all seven base pages: 100 in all four categories, mobile and desktop. Design V2 homepage: performance 96 mobile / 100 desktop, accessibility and best practices 100, SEO 66 due to intentional preview noindex. These are local Lighthouse measurements, not live PageSpeed or field data.
+
+Follow-up: removed rounded trail cells; green → blue now takes 0.3 s and glyphs appear after 0.65–0.95 s, with a 4.5 s departing trail. Hover keeps the trace alive. Footer renders glyphs immediately, without colored blocks. Menu hover is a 1 px underline without an arrow. Build/check and desktop visual verification passed; still a local candidate.
+
+## Release authorized — November 13, 2026
+
+Dominik requested publication of the final corrections (“jak skończysz to wal na prod”), interpreted as updating the existing GitHub Pages deployment. Includes the preceding local candidate. Smaller, more irregular background footprint resets to green on re-entry; canvas dimensions no longer reset on scroll. Film has solid horizontal framing and a full-film play affordance on hover/focus. Testimonials now use editorial rows. GSAP 3.15.1 ScrambleTextPlugin replaces handwritten hero and audience-label scrambling; assets are bundled locally, with reduced-motion and visibility handling preserved. Local build:pages and check passed; desktop/mobile story dialog and rendering checked. Cloudflare/domain configuration is unchanged.

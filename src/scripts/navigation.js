@@ -1,5 +1,5 @@
 const menu = document.querySelector('.navigation');
-if (menu) {
+if (menu && !document.body.classList.contains('variant-v3')) {
  const trigger = menu.querySelector('summary');
  const close = (restore = false) => { menu.open = false; if (restore) trigger.focus(); };
  document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu.open) { event.preventDefault(); close(true); } });

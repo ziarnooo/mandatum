@@ -5,6 +5,8 @@ import {load} from 'cheerio';
 import {refineV3} from './v3-refinements.mjs';
 import {v3Header,icon} from './review-ui.mjs';
 import {pillarArt} from './pillar-art.mjs';
+await fs.mkdir('dist/review/vendor',{recursive:true});
+for(const name of ['gsap.min.js','ScrambleTextPlugin.min.js'])await fs.copyFile('node_modules/gsap/dist/'+name,'dist/review/vendor/'+name);
 const logoSource=await fs.readFile('public/assets/logo-navy.svg','utf8');
 const animatedLogo=logoSource.replace(/<path[^>]+\/>/,`<g fill="#003462"><path d="M.617 9.583H41.169V13.182H.617Z"/><g class="logo-sword sword-left"><path class="logo-stem" d="M.617 13.18H4.216V37.199H.617Z"/><path class="logo-blade" d="M.617 37.199H13.538L.617 52.063Z"/></g><g class="logo-sword sword-center"><path class="logo-stem" d="M19.098 13.18H22.689V52.609H19.098Z"/><path class="logo-blade" d="M13.718 52.609H28.069L20.893 60.865Z"/></g><g class="logo-sword sword-right"><path class="logo-stem" d="M37.571 13.18H41.169V37.196H37.571Z"/><path class="logo-blade" d="M28.248 37.196H41.169V52.059Z"/></g></g>`).replace('<svg ', '<svg class="brand-wordmark" aria-hidden="true" ');
 const v3film=load(await fs.readFile('dist/review/v3/index.html','utf8'))('.foundation-film').toString();
@@ -12,6 +14,7 @@ const home=load(await fs.readFile('dist/index.html','utf8'));
 const context=home('section').filter((_,el)=>home(el).find('.values,.events').length||home(el).is('.original-vision,.original-mission')).clone();
 context.find('.values article').each((i,el)=>{const p=home(el).find('p');const parts=p.text().split(/(?=Trust is the foundation|Success is never achieved alone|We embrace a mindset)/);if(parts.length===4)p.text(parts[i]);});
 const reviewContent=JSON.parse(await fs.readFile('src/data/home-review.json','utf8'));
+const testimonials=JSON.parse(await fs.readFile('src/data/testimonials.json','utf8'));
 const pillars=JSON.parse(await fs.readFile('src/data/pillars.json','utf8'));
 const routes=['/','/about-us','/partnerships','/testimonials','/contact','/faq','/donate'];
 const fileFor=route=>route==='/'?'index.html':`${route.slice(1)}/index.html`;
@@ -38,7 +41,7 @@ for(const version of ['v1','v2','v3'])for(const route of routes){
  if(version==='v3'){
   $('head').append('<link rel="stylesheet" href="/review/v3.css"/><link rel="stylesheet" href="/review/pillar-art.css"/>');
   $('.site-header').replaceWith(v3Header(route));$('.brand img').replaceWith(animatedLogo);
-  $('body').append('<script type="module" src="/review/v3.js"></script>');
+  $('body').append('<script src="/review/vendor/gsap.min.js"></script><script src="/review/vendor/ScrambleTextPlugin.min.js"></script><script type="module" src="/review/v3.js"></script>');
   // Only V3 gets the painterly art direction and unified button treatment.
   $('.hero-image > img').attr('src','/assets/military-landscape.webp').attr('srcset','/assets/military-landscape-small.webp 700w, /assets/military-landscape.webp 1400w').attr('sizes','(max-width:760px) 100vw, 50vw').attr('alt','Painterly coastal landscape linking military service and civilian opportunity');
   $('link[rel=preload][as=image]').attr('href','/assets/military-landscape.webp').attr('imagesrcset','/assets/military-landscape-small.webp 700w, /assets/military-landscape.webp 1400w').attr('imagesizes','(max-width:760px) 100vw, 50vw');
@@ -68,6 +71,7 @@ for(const version of ['v1','v2','v3'])for(const route of routes){
   $('.donate-nav').text('Donate');
   $('.button,.text-link').find('svg,span[aria-hidden]').remove();
   $('.film-invitation span[aria-hidden]').remove();
+  $('.film-frame').append('<a class="video-play-mark" href="https://youtube.com/watch?v=M6fV7lvx42o" target="_blank" rel="noopener"><span aria-hidden="true">▶</span><span>Play film</span></a>');
   $('.text-link').contents().each((_,node)=>{if(node.type==='text')node.data=node.data.replace(/[→↗]/g,'');});
   $('a').each((_,el)=>{const a=$(el),text=a.text().trim();if(['About','About us'].includes(text))a.text('About Us');if(['FAQ','How it works','Explore the Fellowship','Understand the Fellowship'].includes(text))a.text('Explore Fellowship');if(text==='Donate now'||text==='Donate Now')a.text('Donate');});
   $('.person-open').each((_,el)=>{const button=$(el);button.contents().each((_,node)=>{if(node.type==='text')node.data=node.data.replace('↗','');});});
@@ -98,7 +102,17 @@ for(const version of ['v1','v2','v3'])for(const route of routes){
   $('.person-profile h2 small,.person-profile h2 .example-label').remove();
   $('.artwork-story-image img').attr('src','/assets/handshake-editorial.webp').attr('srcset','/assets/handshake-editorial-small.webp 720w, /assets/handshake-editorial.webp 1440w').attr('width','1440').attr('height','960');
   $('.route-grid>a').each((i,el)=>$(el).prepend(`<img class="route-photo" src="/assets/${['morph-collar-civilian.webp','handshake-editorial.webp','morph-fabric-civilian.webp'][i]}" width="960" height="960" alt="" loading="lazy"/>`));
-  $('.footer-brand').addClass('footer-logo').attr('aria-label','The Mandatum Foundation home').html(animatedLogo.replaceAll('#003462','#ffffff'));
+  // Short authentic excerpts live with impact; complete source quotes remain in native dialogs.
+  if(route==='/'){
+   const stories=load('<div class="impact-stories" id="fellow-stories"><h2>In their own words.</h2><div class="story-cards"></div></div>',null,false);
+   testimonials.forEach((story,i)=>{const card=load('<article class="impact-story"><p></p><h3></h3><button class="button outline" type="button">Read full story</button></article>',null,false);card('article').attr('style',`--story-index:${i}`);card('p').text(story.text.split(/(?<=[.!?])\s/).slice(0,1).join(' '));card('h3').text(story.name);card('button').attr('data-dialog',`fellow-story-${i}`);stories('.story-cards').append(card.html());
+    const dialog=load('<dialog class="detail-dialog story-dialog"><button class="dialog-close" type="button" aria-label="Close story">×</button><div class="dialog-body"><h2></h2><p></p></div></dialog>',null,false);dialog('dialog').attr('id',`fellow-story-${i}`).attr('aria-label',story.name);dialog('h2').text(story.name);dialog('p').text(story.text);$('body').append(dialog.html());});
+   $('.impact-section > .container').append(stories.html());
+  }
+  $('a[href="/testimonials"]').attr('href','/review/v3/index.html#fellow-stories');
+  $('footer a').filter((_,el)=>$(el).text().trim()==='Testimonials').remove();
+  $('.statement-section,.support-section,.values-section').after('<div class="pixel-pause" aria-hidden="true"></div>');
+  $('.footer-brand').addClass('footer-logo brand').attr('aria-label','The Mandatum Foundation home').html(animatedLogo.replaceAll('#003462','#ffffff'));
 
  }
 

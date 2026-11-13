@@ -1,3 +1,5 @@
+const scramble=window.gsap;
+scramble.registerPlugin(window.ScrambleTextPlugin);
 import {profileFrame,PROFILE_DURATION} from './profile-motion.js';
 // Motion pauses offscreen, in hidden tabs, and on request; reduced motion stays static.
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -113,12 +115,9 @@ document.querySelectorAll('.button,.donate-nav').forEach(button=>{
 });
 const searchToggle=document.querySelector('.search-toggle'),searchWrap=document.querySelector('.compact-search');
 if(searchToggle&&searchWrap){searchToggle.addEventListener('click',()=>{const open=searchToggle.getAttribute('aria-expanded')!=='true';searchToggle.setAttribute('aria-expanded',String(open));searchWrap.hidden=!open;if(open)search.focus();else{search.value='';search.dispatchEvent(new Event('input'));}});search.addEventListener('keydown',event=>{if(event.key==='Escape'){searchToggle.click();searchToggle.focus();}});}
-const footerLogo=document.querySelector('.footer-logo');
-if(footerLogo){let running=false;const flourish=()=>{if(reduced.matches||running)return;running=true;const blades=[...footerLogo.querySelectorAll('.logo-sword')];Promise.all(blades.map((blade,i)=>blade.animate([{transform:'translateY(0)'},{transform:'translateY(-7px)',offset:.4},{transform:'translateY(0)'}],{duration:620,delay:i*85,easing:'cubic-bezier(.22,1,.36,1)'}).finished.catch(()=>{}))).then(()=>running=false);};footerLogo.addEventListener('pointerenter',flourish);footerLogo.addEventListener('focus',flourish);new IntersectionObserver((entries,observer)=>{if(entries.some(e=>e.isIntersecting)){flourish();observer.disconnect();}},{threshold:.8}).observe(footerLogo);}
 // Values follow the native tab keyboard pattern.
 document.querySelectorAll('.value-tabs').forEach(list=>{const tabs=[...list.querySelectorAll('[role=tab]')];const choose=i=>tabs.forEach((tab,n)=>{tab.setAttribute('aria-selected',String(n===i));tab.tabIndex=n===i?0:-1;document.getElementById(tab.getAttribute('aria-controls')).hidden=n!==i;});tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>choose(i));tab.addEventListener('keydown',e=>{let next=i;if(e.key==='ArrowRight')next=(i+1)%tabs.length;else if(e.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;e.preventDefault();choose(next);tabs[next].focus();});});});
 if(!document.body.hasAttribute('data-testimonial-scroll'))document.querySelectorAll('.quote-toggle').forEach(button=>button.addEventListener('click',()=>{const expanded=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(expanded));button.closest('.quote').classList.toggle('is-expanded',expanded);button.textContent=expanded?'Collapse story':'Read full story';}));
-const footer=document.querySelector('footer');if(footer){footer.addEventListener('pointermove',e=>{const r=footer.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;footer.style.setProperty('--footer-x',x+'px');footer.style.setProperty('--footer-y',y+'px');footer.style.setProperty('--footer-glow','1');const mark=footer.querySelector('.footer-logo svg');if(mark&&!reduced.matches)mark.style.transform=`perspective(700px) rotateY(${(x/r.width-.5)*10}deg) rotateX(${(.5-y/r.height)*8}deg)`;});footer.addEventListener('pointerleave',()=>{footer.style.setProperty('--footer-glow','0');const mark=footer.querySelector('.footer-logo svg');if(mark)mark.style.transform='none';});}
 // Short, left-to-right cipher resolve; semantic heading remains stable.
 const flap=document.querySelector('.hero-flap');
 if(flap){
@@ -126,18 +125,12 @@ if(flap){
  const phrases=['experience','next step'],alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#%+/?<>[]';
  const decode=(element,word,duration=1800)=>{
   element._decodeStop?.();decoding=true;lastSwitch=performance.now();
-  const previous=element.dataset.word||element.textContent;const count=Math.max(previous.length,word.length);
-  const cells=Array.from({length:count},(_,i)=>{const cell=document.createElement('span');cell.className='cipher-cell';cell.dataset.char=word[i]||'';const glyph=document.createElement('span');glyph.className='cipher-glyph';glyph.textContent=previous[i]||'';cell.append(glyph);return cell;});
-  element.replaceChildren(...cells);let frame,start,last=-1;
-  const finish=()=>{cancelAnimationFrame(frame);cells.forEach((cell,i)=>{cell.firstChild.textContent=word[i]||'';cell.classList.remove('cipher-active');if(!word[i])cell.style.width='0px';});element.dataset.word=word;element.classList.remove('is-decoding');decoding=false;};
-  element._decodeStop=finish;if(reduced.matches){finish();element.textContent=word;return;}
+  const finish=()=>{scramble.killTweensOf(element);element.textContent=word;element.dataset.word=word;element.classList.remove('is-decoding');decoding=false;};
+  element._decodeStop=finish;if(reduced.matches){finish();return;}
   element.classList.add('is-decoding');
-  const widths=cells.map((cell,i)=>{const probe=document.createElement('span');probe.textContent=word[i]||previous[i]||' ';probe.style.whiteSpace='pre';element.append(probe);const width=probe.getBoundingClientRect().width;probe.remove();cell.style.width=width+'px';return width;});
-  const tick=time=>{start??=time;const progress=(time-start)/duration;if(progress>=1||document.hidden||reduced.matches){finish();return;}const step=Math.floor((time-start)/100);
-   if(step!==last){last=step;cells.forEach((cell,i)=>{const settled=progress>.45+.5*i/count;cell.firstChild.textContent=settled?(word[i]||''):alphabet[Math.floor(Math.random()*alphabet.length)];cell.classList.toggle('cipher-active',!settled);if(settled&&!word[i])cell.style.width='0px';});}
-   frame=requestAnimationFrame(tick);
-  };frame=requestAnimationFrame(tick);
+  scramble.to(element,{duration:duration/1000,ease:'none',scrambleText:{text:word,chars:'abcdefhknoprstuvxyz0123456789/+',revealDelay:.45,speed:.35,tweenLength:true},onComplete:finish});
  };
+ const measure=()=>{const probe=document.createElement('span');probe.textContent='experience';probe.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font:inherit;letter-spacing:inherit';flap.append(probe);flap.style.minWidth=probe.getBoundingClientRect().width+'px';probe.remove();};document.fonts.ready.then(measure);addEventListener('resize',measure);
  const run=()=>{clearInterval(timer);if(!visible||document.hidden||reduced.matches)return;
   if(!started){started=true;decode(flap,phrases[index]);}
   timer=setInterval(()=>{if(decoding)return;index=1-index;decode(flap,phrases[index]);},6200);
@@ -168,16 +161,10 @@ if(!document.body.hasAttribute('data-testimonial-scroll'))document.querySelector
  track.querySelectorAll('.full-quote').forEach(card=>{card.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')center(card);});card.addEventListener('focusin',()=>center(card));});
 });
 
-// A passing decode wave for the three audience labels; their words never change.
+// The same library handles audience-label rollovers; wording always resolves back.
 document.querySelectorAll('.route-grid>a').forEach(link=>{
- const label=link.querySelector('small');if(!label)return;const text=label.textContent;let frame=0;
- const restore=()=>{cancelAnimationFrame(frame);frame=0;label.textContent=text;label.classList.remove('audience-decoding');};
- const play=()=>{if(reduced.matches||frame)return;const width=label.getBoundingClientRect().width;label.style.minWidth=width+'px';label.classList.add('audience-decoding');
-  const glyphs='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',duration=720;let start,last=-1;
-  const tick=time=>{start??=time;const progress=(time-start)/duration;if(progress>=1||document.hidden||reduced.matches){restore();return;}
-   const step=Math.floor((time-start)/40);if(step!==last){last=step;const head=progress*(text.length+5);label.textContent=[...text].map((char,i)=>char===' '||i>head||i<head-4?char:glyphs[Math.floor(Math.random()*glyphs.length)]).join('');}
-   frame=requestAnimationFrame(tick);
-  };frame=requestAnimationFrame(tick);
- };
+ const label=link.querySelector('small');if(!label)return;const text=label.textContent;
+ const restore=()=>{scramble.killTweensOf(label);label.textContent=text;};
+ const play=()=>{if(reduced.matches||scramble.isTweening(label))return;label.style.minWidth=label.getBoundingClientRect().width+'px';scramble.to(label,{duration:.95,scrambleText:{text,chars:'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',revealDelay:.15,speed:.4},onComplete:restore});};
  link.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')play();});link.addEventListener('focus',play);reduced.addEventListener('change',()=>{if(reduced.matches)restore();});
 });

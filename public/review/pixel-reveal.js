@@ -12,12 +12,12 @@ export function plasma(x,y,pointer,time,radius=190){
  const hole=.5+.5*Math.sin(t*1.1+n*25+Math.floor(x/24)*1.7+Math.floor(y/24));
  return smooth((smooth(1-distance)-n*.38)/.38)*(hole<.28?.06:.45+hole*.55);
 }
-export function createReveal(surface,img,{zoom=1,position=.5,size=8}={}){
+export function createReveal(surface,img,{zoom=1,position=.5,size=8,mode='pixels'}={}){
  const canvas=document.createElement('canvas');canvas.className='photo-reveal';canvas.setAttribute('aria-hidden','true');surface.append(canvas);const ctx=canvas.getContext('2d'),mask=document.createElement('canvas'),m=mask.getContext('2d');let w=0,h=0,cells=[];
  const resize=()=>{const r=surface.getBoundingClientRect();w=Math.round(r.width);h=Math.round(r.height);canvas.width=mask.width=w;canvas.height=mask.height=h;cells=[];for(let y=0;y<h;y+=size)for(let x=0;x<w;x+=size)cells.push({x,y,n:camo(x/size,y/size)});};resize();
  const draw=(p,pointer=null,strength=0,time=performance.now(),pulse=0)=>{ctx.clearRect(0,0,w,h);if(!img.complete||!img.naturalWidth||!w||!h)return;const ratio=Math.max(w/img.naturalWidth,h/img.naturalHeight)*zoom,iw=img.naturalWidth*ratio,ih=img.naturalHeight*ratio;
- ctx.globalCompositeOperation='source-over';ctx.drawImage(img,(w-iw)/2,(h-ih)*position,iw,ih);
- if(p<.999){const rect=surface.getBoundingClientRect();m.clearRect(0,0,w,h);m.fillStyle='#fff';for(const {x,y,n}of cells){const local=p;const alpha=pointer&&strength?Math.max(smooth((p-n*.76)/.24),plasma(x+rect.left,y+rect.top,{x:pointer.x+rect.left,y:pointer.y+rect.top},time,190+pulse*35)*strength):smooth((local-n*.76)/.24);if(alpha<=0)continue;m.globalAlpha=alpha;m.fillRect(x,y,size,size);}ctx.globalCompositeOperation='destination-in';ctx.drawImage(mask,0,0);ctx.globalCompositeOperation='source-over';}
+ ctx.globalCompositeOperation='source-over';ctx.globalAlpha=mode==='soft'?smooth(p):1;ctx.drawImage(img,(w-iw)/2,(h-ih)*position,iw,ih);
+ if(p<.999&&mode!=='soft'){const rect=surface.getBoundingClientRect();m.clearRect(0,0,w,h);m.fillStyle='#fff';for(const {x,y,n}of cells){const local=p;const alpha=pointer&&strength?Math.max(smooth((p-n*.76)/.24),plasma(x+rect.left,y+rect.top,{x:pointer.x+rect.left,y:pointer.y+rect.top},time,190+pulse*35)*strength):smooth((local-n*.76)/.24);if(alpha<=0)continue;m.globalAlpha=alpha;m.fillRect(x,y,size,size);}ctx.globalCompositeOperation='destination-in';ctx.drawImage(mask,0,0);ctx.globalCompositeOperation='source-over';}
  };
  return {canvas,draw,resize};
 }

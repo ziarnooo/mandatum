@@ -23,7 +23,7 @@ for(const file of files){
   $('[href],[src],[action],[data-url],[data-src],[poster]').each((_,el)=>{for(const attr of ['href','src','action','data-url','data-src','poster']){const v=$(el).attr(attr);if(v)$(el).attr(attr,local(v));}});
   $('[srcset],[imagesrcset]').each((_,el)=>{for(const attr of ['srcset','imagesrcset']){const v=$(el).attr(attr);if(v)$(el).attr(attr,v.split(',').map(s=>{const parts=s.trim().split(/\s+/);parts[0]=local(parts[0]);return parts.join(' ')}).join(', '));}});
   text=$.html().replace(/url\((["']?)\/(?!\/)/g,`url($1${base}/`);
- }else if(file.endsWith('.js'))text=text.replace(/(["'`])\/(?!\/)/g,`$1${base}/`);
+ }else if(file.endsWith('.js')&&!file.includes('/vendor/'))text=text.replace(/(["'`])\/(?!\/)/g,`$1${base}/`);
  else if(file.endsWith('.css'))text=text.replace(/url\((["']?)\/(?!\/)/g,`url($1${base}/`);
  text=text.replaceAll('https://www.themandatum.org',origin);
  await fs.writeFile(full,text);
