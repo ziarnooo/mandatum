@@ -31,7 +31,7 @@ The release controller shows **V1 · Original + corrections** and **Design V2** 
 
 ## Production dependencies
 
-- M08 — Cloudflare is the chosen production host; a public GitHub repository is planned. Use GitHub Issues for follow-up work. Empty public repo `ziarnooo/mandatum` exists. Automatic approval review blocked the initial push pending approval of revised V1/V2; Pages is not deployed. Production Cloudflare remains pending.
+- M08 — Cloudflare is the chosen production host; a public GitHub repository is planned. Use GitHub Issues for follow-up work. Dominik explicitly approved publication on November 13, 2026. V1 and Design V2 are pushed to `ziarnooo/mandatum` on `main`; GitHub Pages uses the included Actions workflow. Production Cloudflare remains pending.
 - M09 — Configure Cloudflare Email Service, verified recipient and Turnstile; verify end-to-end delivery and spam handling. The form implementation is ready; sending is disabled until configuration.
 - M10 — Confirm Analytics and Search Console ownership. See `QUALITY.md`; no tracking identifiers were found. Do not create an unrelated property or send data to a guessed account.
 - M11 — After content and preview acceptance, deploy to the agreed environment. Verify HTTPS, redirects, canonical URLs, DNS, CSP, cache/compression, real donation destinations, analytics, GSC and live performance. Preserve the existing Webflow site until cutover is verified.
