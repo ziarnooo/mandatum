@@ -110,8 +110,8 @@
 .variant-v3 .desktop-nav a:after{height:1px;clip-path:none}
 /* Quiet film framing and an explicit full-film hover affordance. */
 .variant-v3 .foundation-film,.variant-v3 .film-frame{border-top-style:solid;border-bottom-style:solid}
-.variant-v3 .video-play-mark{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%) translateY(6px);display:flex;align-items:center;gap:14px;padding:18px 24px;border:1px solid #ffffff90;background:#0b294a70;color:white;font:18px/1.4 var(--body-font);opacity:0;transition:opacity 250ms,transform 250ms;pointer-events:none}
-.variant-v3 .video-play-mark>span{font-size:14px}
+.variant-v3 .video-play-mark{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%) translateY(6px);display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;background:transparent;color:white;font:18px/1.4 var(--body-font);opacity:0;transition:opacity 250ms,transform 250ms;pointer-events:none}
+.variant-v3 .video-play-mark>svg{width:24px;height:24px;filter:drop-shadow(0 1px 3px #0006)}
 .variant-v3 .film-frame:is(:hover,:focus-within) .video-play-mark{opacity:1;transform:translate(-50%,-50%)}
 /* Editorial stories: one reading column, small signatures, no boxed button grid. */
 .variant-v3 .impact-stories{display:grid;grid-template-columns:.65fr 1.35fr;gap:56px;margin-top:72px;padding-top:48px}
@@ -125,7 +125,7 @@
 .variant-v3 .impact-story .button{height:auto;min-height:44px;width:auto;padding:10px 0;border:0;background:none;text-decoration:underline;text-underline-offset:6px;font-size:12px;white-space:nowrap}
 .variant-v3 .impact-story .button:before{display:none}
 .variant-v3 .impact-story .button:hover{background:none;color:#d1e8f7}
-@media(max-width:760px){.variant-v3 .impact-stories{grid-template-columns:1fr;gap:12px}.variant-v3 .impact-stories h2{max-width:none;font-size:30px}.variant-v3 .impact-story p{font-size:23px}.variant-v3 .impact-story{gap:12px}.variant-v3 .video-play-mark{top:25%;padding:12px 16px}}
+@media(max-width:760px){.variant-v3 .impact-stories{grid-template-columns:1fr;gap:12px}.variant-v3 .impact-stories h2{max-width:none;font-size:30px}.variant-v3 .impact-story p{font-size:23px}.variant-v3 .impact-story{gap:12px}.variant-v3 .video-play-mark{top:25%}}
 .variant-v3 .hero-flap{display:inline-block;white-space:nowrap;vertical-align:baseline}
 
 .variant-v3 .video-play-mark{z-index:3;pointer-events:auto;text-decoration:none}

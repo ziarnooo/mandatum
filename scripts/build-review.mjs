@@ -71,7 +71,7 @@ for(const version of ['v1','v2','v3'])for(const route of routes){
   $('.donate-nav').text('Donate');
   $('.button,.text-link').find('svg,span[aria-hidden]').remove();
   $('.film-invitation span[aria-hidden]').remove();
-  $('.film-frame').append('<a class="video-play-mark" href="https://youtube.com/watch?v=M6fV7lvx42o" target="_blank" rel="noopener"><span aria-hidden="true">▶</span><span>Play film</span></a>');
+  $('.film-frame').append('<a class="video-play-mark" aria-label="Play film" href="https://youtube.com/watch?v=M6fV7lvx42o" target="_blank" rel="noopener"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></a>');
   $('.text-link').contents().each((_,node)=>{if(node.type==='text')node.data=node.data.replace(/[→↗]/g,'');});
   $('a').each((_,el)=>{const a=$(el),text=a.text().trim();if(['About','About us'].includes(text))a.text('About Us');if(['FAQ','How it works','Explore the Fellowship','Understand the Fellowship'].includes(text))a.text('Explore Fellowship');if(text==='Donate now'||text==='Donate Now')a.text('Donate');});
   $('.person-open').each((_,el)=>{const button=$(el);button.contents().each((_,node)=>{if(node.type==='text')node.data=node.data.replace('↗','');});});
