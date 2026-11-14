@@ -105,13 +105,17 @@ for(const version of ['v1','v2','v3'])for(const route of routes){
   // Short authentic excerpts live with impact; complete source quotes remain in native dialogs.
   if(route==='/'){
    const stories=load('<div class="impact-stories" id="fellow-stories"><h2>In their own words.</h2><div class="story-cards"></div></div>',null,false);
-   testimonials.forEach((story,i)=>{const card=load('<article class="impact-story"><p></p><h3></h3><button class="button outline" type="button">Read full story</button></article>',null,false);card('article').attr('style',`--story-index:${i}`);card('p').text(story.text.split(/(?<=[.!?])\s/).slice(0,1).join(' '));card('h3').text(story.name);card('button').attr('data-dialog',`fellow-story-${i}`);stories('.story-cards').append(card.html());
-    const dialog=load('<dialog class="detail-dialog story-dialog"><button class="dialog-close" type="button" aria-label="Close story">×</button><div class="dialog-body"><h2></h2><p></p></div></dialog>',null,false);dialog('dialog').attr('id',`fellow-story-${i}`).attr('aria-label',story.name);dialog('h2').text(story.name);dialog('p').text(story.text);$('body').append(dialog.html());});
+   testimonials.forEach((story,i)=>{
+    const excerpt=story.text.split(/(?<=[.!?])\s/)[0];
+    const card=load('<details class="impact-story"><summary><p class="story-excerpt"></p><h3></h3><span class="story-read">Read full story</span></summary><div class="story-remainder"><p></p></div></details>',null,false);
+    card('details').attr('style',`--story-index:${i}`);card('.story-excerpt').text(excerpt);card('h3').text(story.name);card('.story-remainder p').text(story.text.slice(excerpt.length).trim());stories('.story-cards').append(card.html());
+   });
    $('.impact-section > .container').append(stories.html());
   }
   $('a[href="/testimonials"]').attr('href','/review/v3/index.html#fellow-stories');
   $('footer a').filter((_,el)=>$(el).text().trim()==='Testimonials').remove();
   $('.statement-section,.support-section,.values-section').after('<div class="pixel-pause" aria-hidden="true"></div>');
+  $('.pathways article,.donation-card').each((_,el)=>{if($(el).find('a[href]').length)$(el).addClass('linked-tile');});
   $('.footer-brand').addClass('footer-logo brand').attr('aria-label','The Mandatum Foundation home').html(animatedLogo.replaceAll('#003462','#ffffff'));
 
  }

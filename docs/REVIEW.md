@@ -169,3 +169,9 @@ Follow-up: removed rounded trail cells; green → blue now takes 0.3 s and glyph
 ## Release authorized — November 13, 2026
 
 Dominik requested publication of the final corrections (“jak skończysz to wal na prod”), interpreted as updating the existing GitHub Pages deployment. Includes the preceding local candidate. Smaller, more irregular background footprint resets to green on re-entry; canvas dimensions no longer reset on scroll. Film has solid horizontal framing and a full-film play affordance on hover/focus. Testimonials now use editorial rows. GSAP 3.15.1 ScrambleTextPlugin replaces handwritten hero and audience-label scrambling; assets are bundled locally, with reduced-motion and visibility handling preserved. Local build:pages and check passed; desktop/mobile story dialog and rendering checked. Cloudflare/domain configuration is unchanged.
+
+## Local candidate — character trails and inline stories
+
+Background now renders characters only, including actual white gaps between sections. Pillar bottom rules removed. Authentic stories expand inline on desktop hover or mobile tap, with keyboard toggle/Escape and reduced-motion support; no story dialogs. Pathway and approved PayPal/Venmo links cover their entire tiles, with a subtle pointer-following gradient. Zeffy and check instructions remain non-clickable.
+
+Build/check and full base-page audit passed. Local Lighthouse: home mobile performance 99, other base pages 100; desktop performance and accessibility/best practices/SEO 100. These scores cover base pages, not the changed V3 review. Browser verification covered V3 desktop/390px, inline expansion/collapse, keyboard, no horizontal overflow, and tile destinations. Preview: http://127.0.0.1:4321/review/v3/index.html. This candidate has not been pushed.

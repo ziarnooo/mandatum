@@ -129,3 +129,21 @@
 .variant-v3 .hero-flap{display:inline-block;white-space:nowrap;vertical-align:baseline}
 
 .variant-v3 .video-play-mark{z-index:3;pointer-events:auto;text-decoration:none}
+/* Text-only atmosphere and quiet section boundaries. */
+.variant-v3 .support-section .pillars{border-bottom:0}
+.variant-v3 .review-home .pillars>.pillar{border-bottom:0!important}
+.variant-v3 .impact-story{display:block}
+.variant-v3 .impact-story>summary{display:grid;grid-template-columns:1fr auto;gap:18px 24px;cursor:pointer;list-style:none}
+.variant-v3 .impact-story>summary::-webkit-details-marker{display:none}
+.variant-v3 .impact-story .story-read{font:12px/1.5 var(--body-font);text-decoration:underline;text-underline-offset:6px;align-self:center;min-height:44px;display:flex;align-items:center}
+.variant-v3 .impact-story .story-remainder{overflow:hidden}
+.variant-v3 .impact-story .story-remainder p{padding-top:24px;font:400 19px/1.7 var(--body-font);letter-spacing:-.01em;color:#e0e9ef}
+.variant-v3 .impact-story .story-remainder p:before,.variant-v3 .impact-story .story-remainder p:after{content:none}
+.variant-v3 .impact-story summary:focus-visible{outline:2px solid #b4d6ef;outline-offset:8px}
+.variant-v3 .pathways article,.variant-v3 .donation-card{position:relative;isolation:isolate}
+.variant-v3 .pathways article:before,.variant-v3 .donation-card:before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:0;background:radial-gradient(320px circle at var(--tile-x,70%) var(--tile-y,30%),#c8deed9c,transparent 80%);transition:opacity 350ms ease}
+.variant-v3 .pathways article:is(:hover,:focus-within):before,.variant-v3 .donation-card:is(:hover,:focus-within):before{opacity:1}
+.variant-v3 .linked-tile{cursor:pointer}
+.variant-v3 .linked-tile a:after{content:'';position:absolute;inset:0;z-index:2}
+.variant-v3 .linked-tile a{position:static}
+@media(prefers-reduced-motion:reduce){.variant-v3 .pathways article:before,.variant-v3 .donation-card:before{transition:none}}
